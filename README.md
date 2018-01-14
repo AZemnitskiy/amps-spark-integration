@@ -8,16 +8,30 @@ It takes two command line arguments (see code for more configuration options):
 
 __AMPSSparkReceiver "AMPS server" "AMPS topic"__
 
-### Sample Output
-AMPSSparkReceiver "tcp://34.201.116.96:9007/amps/json" "test"
+
+
+### Example
+
+Use AMPS command line utility to publish a few mmesages:
+```
+spark publish -server 34.201.116.96:9007 -type json -topic test
+
+hi
+friend
+friend
 
 ```
 
+On the receiver end, Spark will print statistics:
+
+```
+AMPSSparkReceiver "tcp://34.201.116.96:9007/amps/json" "test"
+
+
 Time: 1515903440000 ms
 -------------------------------------------
-(fwe,1)
-(wfewe,1)
-(wfe,1)
+(hi,1)
+(friend,2)
 
 -------------------------------------------
 Time: 1515903441000 ms
