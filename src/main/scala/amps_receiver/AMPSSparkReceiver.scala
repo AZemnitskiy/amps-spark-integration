@@ -30,8 +30,8 @@ object AMPSSparkReceiver extends Logging {
     val sparkConf = new SparkConf().setMaster("local[2]").setAppName(this.getClass.getSimpleName)
     val ssc = new StreamingContext(sparkConf, Seconds(1))
     val byteStream = ssc.receiverStream(new AMPSSparkReceiver(this.getClass.getSimpleName,
-                                                              List ("tcp://34.201.116.96:9007/amps/json"),
-                                                              "test",
+                                                              List (args(0)),
+                                                              args(1),
                                                               false,  // demo server has only one node
                                                               "sow_and_subscribe"))
 
