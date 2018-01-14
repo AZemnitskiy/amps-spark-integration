@@ -22,7 +22,7 @@ friend
 
 ```
 
-On the receiver end, Spark will print statistics:
+On the receiver end, receiver will print statistics gathered in Spark:
 
 ```
 AMPSSparkReceiver "tcp://34.201.116.96:9007/amps/json" "test"
