@@ -27,7 +27,7 @@ object AMPSSparkReceiver extends Logging {
     }
 
     // Create the context with a 1 second batch size
-    val sparkConf = new SparkConf().setMaster("local[2]").setAppName(this.getClass.getSimpleName)
+    val sparkConf = new SparkConf().setMaster("local[*]").setAppName(this.getClass.getSimpleName)
     val ssc = new StreamingContext(sparkConf, Seconds(1))
     val byteStream = ssc.receiverStream(new AMPSSparkReceiver(this.getClass.getSimpleName,
                                                               List (args(0)),
